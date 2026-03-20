@@ -70,7 +70,7 @@ export const AuctionCTA: React.FC = () => {
                 </motion.button>
 
                 <motion.a
-                  href="https://wa.me/96178777946"
+                  href="https://api.whatsapp.com/send/?phone=556281767612&text=I+want+to+know+more+about+the+GoldPrime+auction+platform&type=phone_number&app_absent=0"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}

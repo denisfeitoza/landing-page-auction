@@ -25,7 +25,7 @@ const AuctionLP = () => {
       <AuctionVideo />
       <AuctionLiveDemo />
       <AuctionGrades />
-      <AuctionModels />
+      {/* <AuctionModels /> */}
       <AuctionTrust />
       <AuctionFAQ />
       <AuctionCTA />
