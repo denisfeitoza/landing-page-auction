@@ -36,7 +36,7 @@ const AUCTION_ITEMS = [
   },
 ];
 
-export const AuctionLiveDemo: React.FC = () => {
+export const AuctionLiveDemo: React.FC<{ onRequestAccess: () => void }> = ({ onRequestAccess }) => {
   const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [timeLeft, setTimeLeft] = useState(6);
@@ -149,7 +149,7 @@ export const AuctionLiveDemo: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => window.open('https://auctions.goldprimefzco.com/', '_blank')}
+                onClick={onRequestAccess}
                 className="inline-flex items-center gap-2 bg-gold text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-gold-light transition-colors shadow-lg shadow-gold/20 w-full md:w-auto justify-center mt-8"
               >
                 <Gavel className="w-5 h-5" />
@@ -241,7 +241,7 @@ export const AuctionLiveDemo: React.FC = () => {
                     borderColor: ['rgba(245,158,11,0.2)', 'rgba(245,158,11,0.6)', 'rgba(245,158,11,0.2)'],
                   }}
                   transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                  onClick={() => window.open('https://auctions.goldprimefzco.com/', '_blank')}
+                  onClick={onRequestAccess}
                   className="w-full bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 rounded-lg p-3 flex items-center justify-center gap-3 cursor-pointer transition-colors group/btn shadow-[0_0_20px_rgba(245,158,11,0.1)]"
                 >
                   <span className="text-white text-[11px] font-black group-hover:text-amber-200 transition-colors uppercase tracking-[0.15em]">

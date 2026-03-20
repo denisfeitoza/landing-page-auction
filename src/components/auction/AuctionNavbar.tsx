@@ -5,7 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 import logoSvg from '@/assets/logo-goldprime.svg';
 
-export const AuctionNavbar: React.FC = () => {
+export const AuctionNavbar: React.FC<{ onRequestAccess: () => void }> = ({ onRequestAccess }) => {
   const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -100,7 +100,7 @@ export const AuctionNavbar: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => window.open('https://auctions.goldprimefzco.com/', '_blank')}
+                onClick={onRequestAccess}
                 className="hidden lg:flex items-center gap-2 px-5 py-2 text-xs font-bold uppercase tracking-wide rounded-lg bg-gold text-black hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20"
               >
                 <Gavel className="w-3.5 h-3.5" />
@@ -147,7 +147,7 @@ export const AuctionNavbar: React.FC = () => {
 
                 <div className="mt-8 pt-6 border-t border-white/10 space-y-4">
                   <button
-                    onClick={() => window.open('https://auctions.goldprimefzco.com/', '_blank')}
+                    onClick={() => { setIsMobileMenuOpen(false); onRequestAccess(); }}
                     className="flex justify-center items-center gap-2 w-full bg-gold text-black text-xs font-bold uppercase tracking-widest px-6 py-4 rounded-lg hover:bg-gold-light transition-all shadow-lg shadow-gold/20"
                   >
                     <Gavel className="w-4 h-4" />

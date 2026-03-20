@@ -4,7 +4,7 @@ import { Gavel, ArrowRight, Sparkles, Gift } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { SectionWrapper, FadeInUp } from '@/components/ui/SectionWrapper';
 
-export const AuctionCTA: React.FC = () => {
+export const AuctionCTA: React.FC<{ onRequestAccess: () => void }> = ({ onRequestAccess }) => {
   const { t } = useLanguage();
 
   return (
@@ -61,7 +61,7 @@ export const AuctionCTA: React.FC = () => {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => window.open('https://auctions.goldprimefzco.com/', '_blank')}
+                  onClick={onRequestAccess}
                   className="inline-flex items-center gap-2 bg-gold text-black px-8 py-4 rounded-xl font-bold text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20 w-full sm:w-auto justify-center"
                 >
                   <Gavel className="w-5 h-5" />

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Gavel, ArrowRight, MapPin, Shield, Clock, Users } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-export const AuctionHero: React.FC = () => {
+export const AuctionHero: React.FC<{ onRequestAccess: () => void }> = ({ onRequestAccess }) => {
   const { t } = useLanguage();
 
   const stats = [
@@ -91,7 +91,7 @@ export const AuctionHero: React.FC = () => {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => window.open('https://auctions.goldprimefzco.com/', '_blank')}
+              onClick={onRequestAccess}
               className="inline-flex items-center gap-2 bg-gold text-black px-8 py-4 rounded-xl font-bold text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20 w-full sm:w-auto justify-center"
             >
               <Gavel className="w-5 h-5" />

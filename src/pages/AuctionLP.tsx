@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { AuctionNavbar } from '@/components/auction/AuctionNavbar';
 import { AuctionHero } from '@/components/auction/AuctionHero';
@@ -13,25 +13,31 @@ import { AuctionFAQ } from '@/components/auction/AuctionFAQ';
 import { AuctionCTA } from '@/components/auction/AuctionCTA';
 import { AuctionFooter } from '@/components/auction/AuctionFooter';
 import { WhatsAppBubble } from '@/components/auction/WhatsAppBubble';
+import { LeadFormModal } from '@/components/auction/LeadFormModal';
 
 const AuctionLP = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const openForm = () => setIsFormOpen(true);
+
   return (
     <main className="flex flex-col w-full bg-black font-sans min-h-screen">
       <ScrollProgress />
-      <AuctionNavbar />
+      <AuctionNavbar onRequestAccess={openForm} />
 
-      <AuctionHero />
+      <AuctionHero onRequestAccess={openForm} />
       <AuctionAdvantages />
       <AuctionHowItWorks />
       {/* <AuctionVideo /> */}
-      <AuctionLiveDemo />
+      <AuctionLiveDemo onRequestAccess={openForm} />
       <AuctionGrades />
       {/* <AuctionModels /> */}
       <AuctionTrust />
       <AuctionFAQ />
-      <AuctionCTA />
+      <AuctionCTA onRequestAccess={openForm} />
       <AuctionFooter />
       <WhatsAppBubble />
+
+      <LeadFormModal isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
     </main>
   );
 };

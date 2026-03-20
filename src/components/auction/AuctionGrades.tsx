@@ -104,11 +104,6 @@ export const AuctionGrades: React.FC = () => {
                   <span className={`text-xl font-black ${grade.color}`}>{grade.name}</span>
                 </div>
 
-                {/* Title */}
-                <h3 className="text-sm font-semibold text-white mb-2">
-                  {t(grade.titleKey)}
-                </h3>
-
                 {/* Description */}
                 <p className="text-white/40 text-xs leading-relaxed flex-1">
                   {t(grade.descKey)}
