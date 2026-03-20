@@ -12,6 +12,7 @@ import { AuctionTrust } from '@/components/auction/AuctionTrust';
 import { AuctionFAQ } from '@/components/auction/AuctionFAQ';
 import { AuctionCTA } from '@/components/auction/AuctionCTA';
 import { AuctionFooter } from '@/components/auction/AuctionFooter';
+import { WhatsAppBubble } from '@/components/auction/WhatsAppBubble';
 
 const AuctionLP = () => {
   return (
@@ -22,7 +23,7 @@ const AuctionLP = () => {
       <AuctionHero />
       <AuctionAdvantages />
       <AuctionHowItWorks />
-      <AuctionVideo />
+      {/* <AuctionVideo /> */}
       <AuctionLiveDemo />
       <AuctionGrades />
       {/* <AuctionModels /> */}
@@ -30,6 +31,7 @@ const AuctionLP = () => {
       <AuctionFAQ />
       <AuctionCTA />
       <AuctionFooter />
+      <WhatsAppBubble />
     </main>
   );
 };
